@@ -167,3 +167,143 @@ Served asset /teachers.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Mar 31 16:30:44 -0300 2012
 Served asset /application.js - 304 Not Modified (2ms)
+  [1m[36m (7.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateStudents (20120331175320)
+  [1m[35m (18.0ms)[0m  CREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `phone` varchar(255), `sex` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Mysql2::Error: Table 'students' already exists: CREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `phone` varchar(255), `sex` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (60.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (120.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateStudents (20120331175320)
+  [1m[35m (100.0ms)[0m  CREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `phone` varchar(255), `sex` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (50.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120331175320')[0m
+Migrating to CreateTeachers (20120331192905)
+  [1m[35m (170.0ms)[0m  CREATE TABLE `teachers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `phone` varchar(255), `birth_date` date, `sex` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (30.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120331192905')[0m
+  [1m[35m (0.0ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateStudents (20120331175320)
+Migrating to CreateTeachers (20120331192905)
+Migrating to CreateCourses (20120331195615)
+  [1m[35m (80.0ms)[0m  CREATE TABLE `courses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `duration` int(11), `description` text, `objectives` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120331195615')[0m
+  [1m[35m (0.0ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+
+
+Started GET "/courses" for 127.0.0.1 at 2012-03-31 16:58:06 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mCourse Load (1.0ms)[0m  [1mSELECT `courses`.* FROM `courses` [0m
+  Rendered courses/index.html.erb within layouts/application (45.0ms)
+Compiled students.css  (57ms)  (pid 4196)
+Compiled teachers.css  (25ms)  (pid 4196)
+Compiled courses.css  (25ms)  (pid 4196)
+Compiled application.css  (119ms)  (pid 4196)
+Compiled jquery.js  (12ms)  (pid 4196)
+Compiled jquery_ujs.js  (1ms)  (pid 4196)
+Compiled courses.js  (605ms)  (pid 4196)
+Compiled students.js  (304ms)  (pid 4196)
+Compiled teachers.js  (323ms)  (pid 4196)
+Compiled application.js  (1784ms)  (pid 4196)
+Completed 200 OK in 2653ms (Views: 2633.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /application.css - 200 OK (57ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /courses.css - 200 OK (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /scaffolds.css - 200 OK (6ms)
+
+
+Started GET "/assets/students.css?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /students.css - 200 OK (4ms)
+
+
+Started GET "/assets/teachers.css?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /teachers.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /jquery.js - 200 OK (13ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /jquery_ujs.js - 200 OK (10ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /courses.js - 200 OK (9ms)
+
+
+Started GET "/assets/students.js?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /students.js - 200 OK (3ms)
+
+
+Started GET "/assets/teachers.js?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /teachers.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-31 16:58:12 -0300
+Served asset /application.js - 200 OK (12ms)
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2012-03-31 16:58:13 -0300
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (83.0ms)
+  Rendered courses/new.html.erb within layouts/application (152.0ms)
+Completed 200 OK in 168ms (Views: 162.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/courses" for 127.0.0.1 at 2012-03-31 16:58:20 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O6QIpbMyoqQIRhWwpdE2lCskYlTMquLwRJzjBBUj2mw=", "course"=>{"name"=>"123", "duration"=>"10", "description"=>"123", "objectives"=>"123"}, "commit"=>"Create Course"}
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (13.0ms)[0m  [1mINSERT INTO `courses` (`created_at`, `description`, `duration`, `name`, `objectives`, `updated_at`) VALUES ('2012-03-31 19:58:20', '123', 10, '123', '123', '2012-03-31 19:58:20')[0m
+  [1m[35m (30.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 116ms (ActiveRecord: 43.0ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2012-03-31 16:58:20 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (12.0ms)[0m  [1mSELECT `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  Rendered courses/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 14.0ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2012-03-31 16:58:22 -0300
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.0ms)[0m  SELECT `courses`.* FROM `courses` 
+  Rendered courses/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/courses/1" for 127.0.0.1 at 2012-03-31 16:58:25 -0300
+Processing by CoursesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"O6QIpbMyoqQIRhWwpdE2lCskYlTMquLwRJzjBBUj2mw=", "id"=>"1"}
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (15.0ms)[0m  [1mDELETE FROM `courses` WHERE `courses`.`id` = 1[0m
+  [1m[35m (28.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/courses
+Completed 302 Found in 56ms (ActiveRecord: 43.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2012-03-31 16:58:26 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mCourse Load (1.0ms)[0m  [1mSELECT `courses`.* FROM `courses` [0m
+  Rendered courses/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2012-03-31 16:58:26 -0300
+Served asset /courses.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2012-03-31 16:58:26 -0300
+Served asset /courses.css - 304 Not Modified (2ms)
